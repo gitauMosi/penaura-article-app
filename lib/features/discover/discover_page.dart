@@ -40,27 +40,28 @@ class DiscoverPage extends StatelessWidget {
             SizedBox(
               height: 90,
               child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: topics.length,
                   shrinkWrap: true,
                   scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => const TopicWidget()),
+                  itemBuilder: (context, index) => TopicWidget(topic: topics[index],)),
             ),
-            contentTextDivider("Top Writers", () {}),
-            SizedBox(
-              height: 125,
-              child: ListView.builder(
-                itemCount: 10,
-                shrinkWrap: true,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => const TopWritersWidget(),
-              ),
-            ),
+            // contentTextDivider("Top Writers", () {}),
+            // SizedBox(
+            //   height: 125,
+            //   child: ListView.builder(
+            //     itemCount: 10,
+            //     shrinkWrap: true,
+            //     scrollDirection: Axis.horizontal,
+            //     itemBuilder: (context, index) => const TopWritersWidget(),
+            //   ),
+            // ),
             contentTextDivider("Our Recommendations", () {}),
             SizedBox(
               height: 150,
               child:ListView.builder(
                     itemCount: articles.length,
                     shrinkWrap: true,
+                    reverse: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index)=>RecentArticleWidget(article: articles[index],)),
             ),
@@ -69,10 +70,11 @@ class DiscoverPage extends StatelessWidget {
              SizedBox(
              // height: 150,
               child: ListView.builder(
-                  itemCount: 10,
+                  itemCount: articles.length,
                   shrinkWrap: true,
+                  reverse: true,
                    physics: NeverScrollableScrollPhysics(),
-                  itemBuilder: (context, index) => const  NewArticleWidget()),
+                  itemBuilder: (context, index) =>  NewArticleWidget(article: articles[index],)),
             ),
             
           ]),

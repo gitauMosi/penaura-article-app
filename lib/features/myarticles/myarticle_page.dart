@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:penaura/utils/data.dart';
 
 import '../../widgets/new_article_widget.dart';
 
@@ -21,10 +22,11 @@ class MyarticlePage extends StatelessWidget {
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListView.builder(
-                    itemCount: 10,
+                    itemCount: 5,
                     shrinkWrap: true,
+                    reverse: true,
                      physics: BouncingScrollPhysics(),
-                    itemBuilder: (context, index) => const  NewArticleWidget()),
+                    itemBuilder: (context, index) =>   NewArticleWidget(article: articles[index],)),
         ),
             
     );

@@ -28,7 +28,7 @@ class RecentArticleWidget extends StatelessWidget {
             padding: EdgeInsets.all(8),
             decoration: BoxDecoration(
               color: Colors.grey[300],
-              image: DecorationImage(image: NetworkImage(article.image)),
+              image: DecorationImage(image: NetworkImage(article.image), fit: BoxFit.cover),
               borderRadius: BorderRadius.circular(20)
             ),
           ),

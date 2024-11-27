@@ -1,8 +1,16 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 
+import 'package:penaura/models/article.dart';
+
+import 'convert.dart';
+
+// ignore: must_be_immutable
 class NewArticleWidget extends StatelessWidget {
-  const NewArticleWidget({
+  Article  article;
+   NewArticleWidget({
     super.key,
+    required this.article,
   });
 
   @override
@@ -12,14 +20,22 @@ class NewArticleWidget extends StatelessWidget {
       child: ListTile(
         contentPadding: EdgeInsets.all(0),
         leading:  Container(
-              height: 120,
+              height: 130,
               width: 100,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
+                 image: DecorationImage(image: NetworkImage(article.image), fit: BoxFit.cover),
                 color: Colors.grey[300]
               )
             ),
-        title: Text("title")
+        title: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(article.title),
+          Text(article.author),
+          Text(formatDate(article.publishedDate))
+          ],
+        )
       ),
     );
   }

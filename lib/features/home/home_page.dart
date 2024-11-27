@@ -47,6 +47,7 @@ class HomePage extends StatelessWidget {
                   child: ListView.builder(
                     itemCount: articles.length,
                     shrinkWrap: true,
+                    reverse: true,
                     scrollDirection: Axis.horizontal,
                     itemBuilder: (context, index)=>RecentArticleWidget(article: articles[index],)),
                 ),

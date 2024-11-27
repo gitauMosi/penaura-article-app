@@ -24,30 +24,57 @@ class ProfilePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 profileHeader(),
-                 profileSubHeader(),
-                 SizedBox(height: 10,),
-                 Text("About", style: TextStyle(fontWeight: FontWeight.bold),),
-                 SizedBox(height: 10,),
-                 Text('Description'),
-                 Text(user.description, overflow: TextOverflow.clip,),
-                 SizedBox(height: 10,),
-                 Divider(color: Colors.grey,),
-                 SizedBox(height: 10,),
-                 Text("Social Media"),
-                 SizedBox(height: 10,),
-                 socialMediaWidget("Facebook", Icons.facebook),
-                 SizedBox(height: 3,),
-                 socialMediaWidget("Whatsapp", Icons.message),
-                 SizedBox(height: 3,),
-                 socialMediaWidget("Instagram", Icons.camera),
-                 SizedBox(height: 10,),
-                 Divider(color: Colors.grey,),
-                 SizedBox(height: 10,),
-                 Text("More Info"),
-                 moreWidget("New york", Icons.location_on),
-                 moreWidget("Joined Since March, 2024", Icons.help_outline),
-                 
-                 ],
+                profileSubHeader(),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text(
+                  "About",
+                  style: TextStyle(fontWeight: FontWeight.bold),
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text('Description'),
+                Text(
+                  user.description,
+                  overflow: TextOverflow.clip,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Divider(
+                  color: Colors.grey,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text("Social Media"),
+                const SizedBox(
+                  height: 10,
+                ),
+                socialMediaWidget("Facebook", Icons.facebook),
+                const SizedBox(
+                  height: 3,
+                ),
+                socialMediaWidget("Whatsapp", Icons.message),
+                const SizedBox(
+                  height: 3,
+                ),
+                socialMediaWidget("Instagram", Icons.camera),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Divider(
+                  color: Colors.grey,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Text("More Info"),
+                moreWidget("New york", Icons.location_on),
+                moreWidget("Joined Since March, 2024", Icons.help_outline),
+              ],
             ),
           ),
         ));
@@ -55,26 +82,38 @@ class ProfilePage extends StatelessWidget {
 
   Row moreWidget(String name, IconData icon) {
     return Row(
-
-            children: [
-              Icon(icon, ),
-              SizedBox(width: 3,),
-              Text(name, )
-              
-            ],
-           );
+      children: [
+        Icon(
+          icon,
+        ),
+        const SizedBox(
+          width: 3,
+        ),
+        Text(
+          name,
+        )
+      ],
+    );
   }
 
   Row socialMediaWidget(String name, IconData icon) {
     return Row(
-
-              children: [
-                Icon(icon, color: Colors.brown,),
-                SizedBox(width: 3,),
-                Text(name, style: TextStyle(color: Colors.brown,),)
-                
-              ],
-             );
+      children: [
+        Icon(
+          icon,
+          color: Colors.brown,
+        ),
+        const SizedBox(
+          width: 3,
+        ),
+        Text(
+          name,
+          style: const TextStyle(
+            color: Colors.brown,
+          ),
+        )
+      ],
+    );
   }
 
   Column profileSubHeader() {
@@ -129,7 +168,12 @@ class ProfilePage extends StatelessWidget {
               height: 100,
               width: 100,
               decoration: BoxDecoration(
-                  shape: BoxShape.circle, color: Colors.grey[300])),
+                  image: const DecorationImage(
+                      image: NetworkImage(
+                          "https://miro.medium.com/v2/resize:fit:785/0*Ggt-XwliwAO6QURi.jpg"),
+                      fit: BoxFit.cover),
+                  shape: BoxShape.circle,
+                  color: Colors.grey[300])),
           const SizedBox(
             width: 10,
           ),
